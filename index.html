@@ -7,13 +7,17 @@
   <link rel="stylesheet" href="index.css">
   <script defer src="index.js"></script>
   <title>Tic Tac Toe</title>
-  <link rel="icon" href="images/icon.png">
+  <link rel="icon" href="images/gameicon.png">
 </head>
 <body>
     <section id="title">
         <h1>Tic Tac Toe</h1>
         <h2>Get 3 in a row to win!</h2>
-        <h3 id="playerTurn"></h3>
+        <div id="playersBox">
+            <h3>Player X: <span id=playerX></span></h3>
+            <h3>Player O: <span id=playerO></span></h3>
+        </div>
+        <h3><span id="currentPlayer"></span></h3>
     </section>
     <section id="game">
         <table id="table"></table>
