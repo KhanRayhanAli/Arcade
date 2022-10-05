@@ -8,19 +8,52 @@
   <script defer src="index.js"></script>
   <title>Tic Tac Toe</title>
   <link rel="icon" href="images/gameicon.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style> 
 </head>
 <body>
-    <section id="title">
+    <section id="head">
         <h1>Tic Tac Toe</h1>
         <h2>Get 3 in a row to win!</h2>
         <div id="playersBox">
-            <h3>Player X: <span id=playerX></span></h3>
-            <h3>Player O: <span id=playerO></span></h3>
+            <h3 id="one">Player X: <span id=playerX>Rayhan</span></h3>
+            <h3 id="two">Player O: <span id=playerO>Nahyar</span></h3>
         </div>
         <h3><span id="currentPlayer"></span></h3>
     </section>
+    <section id="settings">
+        <select id="playerOneColors">
+            <option value="red">red</option>
+            <option value="blue">blue</option>
+            <option value="yellow">yellow</option>
+            <option value="green">green</option>
+        </select>
+        <select id="playerTwoColors">
+            <option value="blue">blue</option>
+            <option value="red">red</option>
+            <option value="yellow">yellow</option>
+            <option value="green">green</option>
+        </select>
+    </section>
     <section id="game">
-        <table id="table"></table>
+        <table id="table">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
     </section>
 </body>
 </html>
