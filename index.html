@@ -14,15 +14,25 @@
 </head>
 <body>
     <section id="head">
-        <h1>Tic Tac Toe</h1>
+        <div id="title">
+            <h1>Tic</h1>
+            <h1 class="red">Tac</h1>
+            <h1>Toe</h1>
+        </div>
         <h2>Get 3 in a row to win!</h2>
+        <div id="nameInput1">
+            <h3>Player X name: </h3>
+            <input type="text" id="player1">
+            <h3>Player O name:</h3>
+            <input type="text" id="player2">
+        </div>
         <div id="playersBox">
             <h3 id="one">Player X: <span id=playerX>Rayhan</span></h3>
             <h3 id="two">Player O: <span id=playerO>Nahyar</span></h3>
         </div>
         <h3><span id="currentPlayer"></span></h3>
     </section>
-    <section id="settings">
+    <!-- <section id="settings">
         <select id="playerOneColors">
             <option value="red">red</option>
             <option value="blue">blue</option>
@@ -35,23 +45,23 @@
             <option value="yellow">yellow</option>
             <option value="green">green</option>
         </select>
-    </section>
+    </section> -->
     <section id="game">
         <table id="table">
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td class="cell" id="0">X</td>
+                <td class="cell" id="1">X</td>
+                <td class="cell" id="2">X</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td class="cell" id="3">O</td>
+                <td class="cell" id="4">O</td>
+                <td class="cell" id="5">O</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td class="cell" id="6">X</td>
+                <td class="cell" id="7">O</td>
+                <td class="cell" id="8">X</td>
             </tr>
         </table>
     </section>
