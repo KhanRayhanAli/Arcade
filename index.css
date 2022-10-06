@@ -1,6 +1,6 @@
 * {
-    font-family: 'Press Start 2P';
-    color: whitesmoke;
+    font-family: 'tron';
+    color: #d0dfe6ff;
 }
 
 body {
@@ -8,8 +8,12 @@ body {
     flex-direction: column;
     align-items: center;
     flex: 1 0 1;
-    background-color: #222;
+    background-color: #000000;
     text-align: center;
+}
+
+button {
+    color: #000000;
 }
 
 #title {
@@ -36,7 +40,7 @@ h3 {
 }
 
 input {
-    color: #222;
+    color: #000000;
 }
 
 
@@ -50,7 +54,7 @@ input {
     margin-right: 1rem;
 }
 
-#playerOneColors {
+/* #playerOneColors {
     color: #222;
     margin-right: 3rem;
     margin-top: 0;
@@ -58,22 +62,14 @@ input {
 
 #playerTwoColors {
     color: #222;
+} */
+
+.tronBlue {
+    color:#6ee2ffff;
 }
 
-.red {
-    color: red;
-}
-
-.blue {
-    color: blue;
-}
-
-.yellow {
-    color: yellow;
-}
-
-.green {
-    color: green;
+.tronRed {
+    color: #ff410dff;
 }
 
 td {
@@ -103,4 +99,16 @@ table tr td:first-child {
 
 table tr td:last-child {
     border-right: 0;
+}
+
+.gameover {
+    /* display: none; */
+    width: 200px;
+    justify-content: center;
+    background-color: #d0dfe6ff;
+    border-radius: 2px;
+}
+
+.gameover h2 {
+    color: #000000;
 }
