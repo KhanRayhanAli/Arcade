@@ -12,6 +12,10 @@ const friendBtn = setBox.querySelector(".friend");
 const playBtn = setBox.querySelector(".play");
 const xName = setBox.querySelector(".nameInput1")
 const oName = setBox.querySelector(".nameInput2")
+const backBtn = setBox.querySelector(".back")
+const head = document.querySelector(".head")
+const game = document.querySelector(".game")
+const gameFinish = document.querySelector(".gameover")
 
 const winningConditions = [
     [0, 1, 2],
@@ -27,20 +31,40 @@ const winningConditions = [
 
 function playComputer() {
     opponent = player.computer;
-    hideMenu(options)
-    hideMenu(computerBtn)
-    hideMenu(friendBtn)
-    showMenu(xName)
+    computerO();
+    hideMenu(options);
+    hideMenu(computerBtn);
+    hideMenu(friendBtn);
+    showMenu(xName);
+    showMenu(backBtn);
+    showMenu(playBtn);
 }
 
 function playFriend() {
     opponent = player.two;
-    hideMenu(options)
-    hideMenu(computerBtn)
-    hideMenu(friendBtn)
-    showMenu(xName)
-    showMenu(oName)
-    showMenu(playBtn)
+    hideMenu(options);
+    hideMenu(computerBtn);
+    hideMenu(friendBtn);
+    showMenu(xName);
+    showMenu(oName);
+    showMenu(backBtn);
+    showMenu(playBtn);
+}
+
+function backTrack() {
+    hideMenu(xName);
+    hideMenu(oName);
+    hideMenu(backBtn);
+    hideMenu(playBtn);
+    showMenu(options);
+    showMenu(computerBtn);
+    showMenu(friendBtn);
+}
+
+function showGame() {
+    hideMenu(setBox);
+    showMenu(head);
+    showMenu(game);
 }
 
 function hideMenu(hidden) {
@@ -61,11 +85,15 @@ function setNameO(){
     document.getElementById('playerO').innerText = player2Name;
 }
 
+function computerO(){
+    document.getElementById('playerO').innerText = 'Computer'
+}
+
 const cells = document.querySelectorAll(".cell");
 startGame();
 
 function startGame() {
-    document.querySelector(".gameover").getElementsByClassName.display = "none";
+    hideMenu(gameFinish)
     baseBoard = Array.from(Array(9).keys());
     for (let i = 0; i < cells.length; i++) {
         cells[i].innerText = '';
@@ -75,14 +103,8 @@ function startGame() {
 }
 
 function turnClick(square) {
-        turn(square.target.id, player1)
+        turn(square.target.id, player.one)
 }
-
-// function turnSwitch(square) {
-//     if (turn(square.target.id, player1)){
-//         turn(square.target.id, player2)
-//     }
-// }
 
 function turn(squareId, player) {
     baseBoard[squareId] = player;
@@ -106,9 +128,11 @@ function checkWin(board, player) {
 
 function gameOver(gameWin) {
     for (let index of winningConditions[gameWin.index]) {
-        document.getElementById(index).style.backgroundColor = gameWin.player == player1 ? "#6ee2ffff" : "#ff410dff";
+        document.getElementById(index).style.backgroundColor = gameWin.player == player.one ? "#6ee2ffff" : "#ff410dff";
     }
     for (let i = 0; i < cells.length; i++) {
         cells[i].removeEventListener('click', turnClick, false);
     }
+    showMenu(gameFinish)
+    // document.getElementsByClassName(".winner").innerText =
 }

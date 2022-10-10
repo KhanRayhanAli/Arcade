@@ -34,7 +34,8 @@
             <input type="text" id="player2">
             <button id="setPlayer2Name" onClick="setNameO()">Set Name</button>
         </div>
-        <div><button class="play hide" onClick="">Play</button></div>
+        <div><button class="back hide" onClick="backTrack()">Back</button></div>
+        <div><button class="play hide" onClick="showGame()">Play</button></div>
     </div>
     <section class="head hide">
         <h2>Get three in a row to win!</h2>
@@ -44,20 +45,6 @@
         </div>
         <h3><span id="currentPlayer"></span></h3>
     </section>
-    <!-- <section id="settings">
-        <select id="playerOneColors">
-            <option value="red">red</option>
-            <option value="blue">blue</option>
-            <option value="yellow">yellow</option>
-            <option value="green">green</option>
-        </select>
-        <select id="playerTwoColors">
-            <option value="blue">blue</option>
-            <option value="red">red</option>
-            <option value="yellow">yellow</option>
-            <option value="green">green</option>
-        </select>
-    </section> -->
     <section class="game hide">
         <table id="table">
             <tr>
@@ -76,10 +63,10 @@
                 <td class="cell" id="8"></td>
             </tr>
         </table>
-        <div class="gameover">
+        <div class="gameover hide">
             <h2>Game Over!</h2>
             <div class="winner"></div>
-            <button onClick="startGame()">Play Again?</button>
+            <button onClick="startGame()">Play Again ?</button>
         </div>
     </section>
 </body>
