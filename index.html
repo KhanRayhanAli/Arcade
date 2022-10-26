@@ -10,7 +10,7 @@
   <link rel="icon" href="images/gameicon.png">
     <style>
         @import url('http://fonts.cdnfonts.com/css/tron');
-</style>
+    </style>
 </head>
 <body>
     <div id="title">
@@ -35,13 +35,13 @@
             <button id="setPlayer2Name" onClick="setNameO()">Set Name</button>
         </div>
         <div><button class="back hide" onClick="backTrack()">Back</button></div>
-        <div><button class="play hide" onClick="showGame()">Play</button></div>
+        <div><button class="play hide" onClick="playGame()">Play</button></div>
     </div>
     <section class="head hide">
         <h2>Get three in a row to win!</h2>
         <div id="playersBox">
-            <h3 id="one">Player X: <span id=playerX></span></h3>
-            <h3 id="two">Player O: <span id=playerO></span></h3>
+            <h3 id="one" class="tronBlue">Player X: <span id=playerX class="tronBlue"></span></h3>
+            <h3 id="two" class="tronRed">Player O: <span id=playerO class="tronRed"></span></h3>
         </div>
         <h3><span id="currentPlayer"></span></h3>
     </section>
@@ -67,6 +67,7 @@
             <h2>Game Over!</h2>
             <div class="winner"></div>
             <button onClick="startGame()">Play Again ?</button>
+            <button onClick="backStart()">Start Over ?</button>
         </div>
     </section>
 </body>

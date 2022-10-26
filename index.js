@@ -3,19 +3,23 @@ const player = {
     "one": "X",
     "two": "O",
     "computer": "O"
-}
+};
+const currentPlayer = '';
 let opponent;
 const setBox = document.querySelector(".setBox");
 const options = setBox.querySelector(".playOptions")
 const computerBtn = setBox.querySelector(".computer");
 const friendBtn = setBox.querySelector(".friend");
 const playBtn = setBox.querySelector(".play");
-const xName = setBox.querySelector(".nameInput1")
-const oName = setBox.querySelector(".nameInput2")
-const backBtn = setBox.querySelector(".back")
-const head = document.querySelector(".head")
-const game = document.querySelector(".game")
-const gameFinish = document.querySelector(".gameover")
+const backBtn = setBox.querySelector(".back");
+
+const xName = setBox.querySelector(".nameInput1");
+const oName = setBox.querySelector(".nameInput2");
+
+const head = document.querySelector(".head");
+const game = document.querySelector(".game");
+const gameFinish = document.querySelector(".gameover");
+const cells = document.querySelectorAll(".cell");
 
 const winningConditions = [
     [0, 1, 2],
@@ -27,7 +31,6 @@ const winningConditions = [
     [0, 4, 8],
     [2, 4, 6]
 ]
-
 
 function playComputer() {
     opponent = player.computer;
@@ -49,6 +52,7 @@ function playFriend() {
     showMenu(oName);
     showMenu(backBtn);
     showMenu(playBtn);
+    
 }
 
 function backTrack() {
@@ -61,10 +65,28 @@ function backTrack() {
     showMenu(friendBtn);
 }
 
-function showGame() {
-    hideMenu(setBox);
-    showMenu(head);
-    showMenu(game);
+function playGame() {
+    // if (playerX == null) {
+    //     alert('Enter a name!')
+    // } else {
+        hideMenu(setBox);
+        showMenu(head);
+        showMenu(game);
+    // }
+}
+
+function backStart() {
+    hideMenu(options);
+    hideMenu(head);
+    hideMenu(game);
+    hideMenu(xName);
+    hideMenu(oName);
+    hideMenu(backBtn);
+    hideMenu(playBtn);
+    showMenu(computerBtn);
+    showMenu(friendBtn);
+    showMenu(setBox);
+    
 }
 
 function hideMenu(hidden) {
@@ -78,6 +100,7 @@ function showMenu(shown) {
 function setNameX(){
     let player1Name = document.getElementById('player1').value;
     document.getElementById('playerX').innerText = player1Name;
+    
 }
 
 function setNameO(){
@@ -89,7 +112,6 @@ function computerO(){
     document.getElementById('playerO').innerText = 'Computer'
 }
 
-const cells = document.querySelectorAll(".cell");
 startGame();
 
 function startGame() {
@@ -134,5 +156,7 @@ function gameOver(gameWin) {
         cells[i].removeEventListener('click', turnClick, false);
     }
     showMenu(gameFinish)
-    // document.getElementsByClassName(".winner").innerText =
+    if (gameWin.player == player.one) {
+        document.getElementsByClassName(".winner").innerText = document.getElementById('player1').value + ' Wins!'
+    }
 }

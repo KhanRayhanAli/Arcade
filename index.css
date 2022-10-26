@@ -10,7 +10,6 @@ body {
     flex: 1 0 1;
     background-color: #000000;
     text-align: center;
-    background-image: image('images/grid.png');
 }
 
 .setBox {
