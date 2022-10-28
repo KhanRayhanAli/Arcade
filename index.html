@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="index.css">
-  <script defer src="index.js"></script>
-  <title>Tic Tac Toe</title>
-  <link rel="icon" href="images/gameicon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script defer src="index.js"></script>
+    <title>Tic Tac Toe</title>
+    <link rel="icon" href="images/gameicon.png" />
     <style>
-        @import url('http://fonts.cdnfonts.com/css/tron');
+      @import url("http://fonts.cdnfonts.com/css/tron");
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="title">
-        <h1>Tic</h1>
-        <h1 class="tronRed">Tac</h1>
-        <h1>Toe</h1>
+      <h1>Tic</h1>
+      <h1 class="tronRed">Tac</h1>
+      <h1>Toe</h1>
     </div>
     <div class="setBox">
-        <div class="settings">
-            <h2 class="playOptions">Play Against :</h2>
-            <div><button class="computer" onClick="playComputer()">Computer</button></div>
-            <div><button  class="friend" onClick="playFriend()">Friend</button></div>
+      <div class="settings">
+        <h2 class="playOptions">Play Against :</h2>
+        <div>
+          <button class="computer" onClick="playComputer()">Computer</button>
         </div>
-        <div class="nameInput1 hide">
-            <h3 class="nameInputs">Player X name: </h3>
-            <input type="text" id="player1">
-            <button id="setPlayer1Name" onClick="setNameX()">Set Name</button>
-        </div>
-        <div class="nameInput2 hide">
-            <h3 class="nameInputs">Player O name:</h3>
-            <input type="text" id="player2">
-            <button id="setPlayer2Name" onClick="setNameO()">Set Name</button>
-        </div>
-        <div><button class="back hide" onClick="backTrack()">Back</button></div>
-        <div><button class="play hide" onClick="playGame()">Play</button></div>
+        <div><button class="friend" onClick="playFriend()">Friend</button></div>
+      </div>
+      <div class="nameInput1 hide">
+        <h3 class="nameInputs">Player X name:</h3>
+        <input type="text" id="player1" />
+        <button id="setPlayer1Name" onClick="setNameX()">Set Name</button>
+      </div>
+      <div class="nameInput2 hide">
+        <h3 class="nameInputs">Player O name:</h3>
+        <input type="text" id="player2" />
+        <button id="setPlayer2Name" onClick="setNameO()">Set Name</button>
+      </div>
+      <div><button class="back hide" onClick="backTrack()">Back</button></div>
+      <div><button class="play hide" onClick="playGame()">Play</button></div>
     </div>
     <section class="head hide">
-        <h2>Get three in a row to win!</h2>
-        <div id="playersBox">
-            <h3 id="one" class="tronBlue">Player X: <span id=playerX class="tronBlue"></span></h3>
-            <h3 id="two" class="tronRed">Player O: <span id=playerO class="tronRed"></span></h3>
-        </div>
-        <h3><span id="currentPlayer"></span></h3>
+      <h2>Get three in a row to win!</h2>
+      <div id="playersBox">
+        <h3 id="one" class="tronBlue">
+          Player X: <span id="playerX" class="tronBlue"></span>
+        </h3>
+        <h3 id="two" class="tronRed">
+          Player O: <span id="playerO" class="tronRed"></span>
+        </h3>
+      </div>
+      <h3><span id="currentPlayerName"></span>'s Turn!</h3>
     </section>
     <section class="game hide">
-        <table id="table">
-            <tr>
-                <td class="cell" id="0"></td>
-                <td class="cell" id="1"></td>
-                <td class="cell" id="2"></td>
-            </tr>
-            <tr>
-                <td class="cell" id="3"></td>
-                <td class="cell" id="4"></td>
-                <td class="cell" id="5"></td>
-            </tr>
-            <tr>
-                <td class="cell" id="6"></td>
-                <td class="cell" id="7"></td>
-                <td class="cell" id="8"></td>
-            </tr>
-        </table>
-        <div class="gameover hide">
-            <h2>Game Over!</h2>
-            <div class="winner"></div>
-            <button onClick="startGame()">Play Again ?</button>
-            <button onClick="backStart()">Start Over ?</button>
-        </div>
+      <table id="table">
+        <tr>
+          <td class="cell" id="0"></td>
+          <td class="cell" id="1"></td>
+          <td class="cell" id="2"></td>
+        </tr>
+        <tr>
+          <td class="cell" id="3"></td>
+          <td class="cell" id="4"></td>
+          <td class="cell" id="5"></td>
+        </tr>
+        <tr>
+          <td class="cell" id="6"></td>
+          <td class="cell" id="7"></td>
+          <td class="cell" id="8"></td>
+        </tr>
+      </table>
+      <div class="gameover hide">
+        <h2>Game Over!</h2>
+        <div class="winner"></div>
+        <button onClick="startGame()">Play Again ?</button>
+        <button onClick="backStart()">Start Over ?</button>
+      </div>
     </section>
-</body>
+  </body>
 </html>
