@@ -6,7 +6,7 @@ const player = {
 };
 
 let currentPlayer;
-let opponent = "";
+let opponent;
 const setBox = document.querySelector(".setBox");
 const options = setBox.querySelector(".playOptions");
 const computerBtn = setBox.querySelector(".computer");
@@ -120,8 +120,8 @@ function backStart() {
     cells[i].innerText = "";
     cells[i].style.removeProperty("background-color");
     cells[i].addEventListener("click", turnClick, false);
-  }
-}
+  };
+};
 
 startGame();
 
@@ -133,20 +133,25 @@ function startGame() {
     cells[i].style.removeProperty("background-color");
     cells[i].addEventListener("click", turnClick, false);
   };
-}
+};
 
 function turnClick(square) {
-  turn(square.target.id, currentPlayer);
-  swapPlayer();
-  cells[square.target.id].removeEventListener("click", turnClick, false);
-}
+  if (typeof baseBoard[square.target.id] == 'number') {
+    turn(square.target.id, currentPlayer);
+    swapPlayer();
+  //   if (opponent == player.comp) {
+  //     checkTie();
+  //     turn(compPlayer(), opponent);
+  //   } else 
+  }
+};
 
 function swapPlayer() {
   if (currentPlayer === player.one) {
     currentPlayer = opponent;
   } else currentPlayer = player.one;
   turnIndicator();
-}
+};
 
 function turnIndicator() {
   if (currentPlayer === opponent) {
@@ -185,9 +190,30 @@ function gameOver(gameWin) {
   for (let i = 0; i < cells.length; i++) {
     cells[i].removeEventListener("click", turnClick, false);
   }
+  gameWinner(gameWin.player == player.one ? document.getElementById("playerX").innerText + " Wins!" : document.getElementById("playerO").innerText + " Wins!")
+};
+
+function gameWinner(winner) {
   showMenu(gameFinish);
-  if (gameWin.player === player.one) {
-    document.getElementsByClassName(".winner").innerText =
-      document.getElementById("playerX").innerText + " Wins!";
+  document.querySelector("#winner").innerText = winner;
+}
+
+function emptySpace() {
+  return baseBoard.filter(s => typeof s == 'number');
+};
+
+// function compPlayer() {
+//   return emptySpace()[0];
+// };
+
+function checkTie() {
+  if (emptySpace().length == 0) {
+    for (var i = 0; i < cells.length; i++) {
+      cells[i].style.backgroundColor = "#95cc5eff";
+      cells[i].removeEventListener('click', turnClick, false)
+    };
+    gameWinner("Tie Game!")
+    return true;
   }
+  return false;
 };
