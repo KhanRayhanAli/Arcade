@@ -138,6 +138,7 @@ function startGame() {
 function turnClick(square) {
   if (typeof baseBoard[square.target.id] == 'number') {
     turn(square.target.id, currentPlayer);
+    checkTie();
     swapPlayer();
   //   if (opponent == player.comp) {
   //     checkTie();
