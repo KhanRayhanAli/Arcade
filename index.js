@@ -156,10 +156,10 @@ function swapPlayer() {
 function turnIndicator() {
   if (currentPlayer === opponent) {
       document.getElementById("currentPlayerName").innerText =
-        document.getElementById("playerO").innerText;
+        document.getElementById("playerO").innerText + "'s Turn!";
   } else {
     document.getElementById("currentPlayerName").innerText =
-      document.getElementById("playerX").innerText;
+      document.getElementById("playerX").innerText + "'s Turn!";
   }
 };
 
